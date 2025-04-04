@@ -1,11 +1,13 @@
-
 # Infraestructura Segura - TechDiversa
 
 Este proyecto despliega infraestructura básica en AWS con:
+
 - Auto Scaling Group (ASG)
 - Application Load Balancer (ALB)
 - Encriptación en reposo en EC2 (volumen EBS)
 - Script de inicialización con Apache (user_data.sh)
+
+![Diagrama de arquitectura](./img/diagrama_solucion.png)
 
 ## Características
 
