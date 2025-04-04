@@ -7,7 +7,7 @@ Este proyecto despliega infraestructura básica en AWS con:
 - Encriptación en reposo en EC2 (volumen EBS)
 - Script de inicialización con Apache (user_data.sh)
 
-![Diagrama de arquitectura](./img/diagrama_solucion.png)
+![Diagrama de arquitectura](img/diagrama_solucion.png)
 
 ## Características
 
