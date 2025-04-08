@@ -31,3 +31,27 @@ module "alb" {
   sg_id     = module.autoscaling.launch_sg_id
 }
 
+module "waf" {
+  source  = "./modules/waf"
+  alb_arn = module.alb.alb_arn
+}
+
+module "rds" {
+  source     = "./modules/rds"
+  subnet_ids = [module.network.public_subnet_1, module.network.public_subnet_2]
+  db_user    = "techadmin"
+  db_pass    = "TechDiversa123!"
+  db_sg_id   = module.autoscaling.launch_sg_id
+}
+
+module "backup" {
+  source       = "./modules/backup"
+  rds_arn      = module.rds.techdiversa_db_arn # output que puedes definir
+  iam_role_arn = aws_iam_role.aws_backup_role.arn
+}
+
+module "security" {
+  source          = "./modules/security"
+  bucket          = "techdiversa-cloudtrail-logs"
+  config_role_arn = aws_iam_role.config_role.arn
+}

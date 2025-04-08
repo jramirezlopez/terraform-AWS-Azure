@@ -1,3 +1,4 @@
 AWS/terraform/.terraform.lock.hcl
 AWS/terraform/terraform.tfstate.backup
 AWS/terraform/.terraform/*
+Azure/terraform/.terraform/*
